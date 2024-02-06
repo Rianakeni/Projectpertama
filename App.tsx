@@ -8,16 +8,17 @@ import {
 } from 'react-native'
 import React from 'react';
 import Logo from './assets/unklablogo.png';
+import Title from './src/components/Title';
+import Input from './src/components/Input';
 
 const App = () => {
   return (
     <View>
-      <Text style={style.title}>Welcome to FILKOM UNKLAB</Text>
+      <Title text='Welcome To FILKOM UNKLAB'/>
       <ScrollView>
-        <TextInput 
-          style={style.inputUsername} 
-          placeholder='anything about FILKOM UNKLAB'
-          />
+        <Input/>
+        <Input placeholder='masukan passoword'/>
+        <Input placeholder='masukan email'/>
         <View style={{flexDirection: 'row', marginTop: 20, justifyContent: 'center', alignItems: 'center'}}>
           <View style={{width: 150, height: 100, backgroundColor: 'blue'}}/>
           <View style={{ backgroundColor: 'yellow', width: 100, height: 100, justifyContent: 'center', alignItems: 'center' }}>
