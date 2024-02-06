@@ -1,118 +1,94 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- */
-
+import {
+  Image,
+  Text, 
+  View, 
+  ScrollView, 
+  TextInput, 
+  StyleSheet
+} from 'react-native'
 import React from 'react';
-import type {PropsWithChildren} from 'react';
-import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  useColorScheme,
-  View,
-} from 'react-native';
+import Logo from './assets/unklablogo.png';
 
-import {
-  Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
-
-type SectionProps = PropsWithChildren<{
-  title: string;
-}>;
-
-function Section({children, title}: SectionProps): React.JSX.Element {
-  const isDarkMode = useColorScheme() === 'dark';
+const App = () => {
   return (
-    <View style={styles.sectionContainer}>
-      <Text
-        style={[
-          styles.sectionTitle,
-          {
-            color: isDarkMode ? Colors.white : Colors.black,
-          },
-        ]}>
-        {title}
-      </Text>
-      <Text
-        style={[
-          styles.sectionDescription,
-          {
-            color: isDarkMode ? Colors.light : Colors.dark,
-          },
-        ]}>
-        {children}
-      </Text>
-    </View>
-  );
-}
-
-function App(): React.JSX.Element {
-  const isDarkMode = useColorScheme() === 'dark';
-
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-  };
-
-  return (
-    <SafeAreaView style={backgroundStyle}>
-      <StatusBar
-        barStyle={isDarkMode ? 'light-content' : 'dark-content'}
-        backgroundColor={backgroundStyle.backgroundColor}
-      />
-      <ScrollView
-        contentInsetAdjustmentBehavior="automatic"
-        style={backgroundStyle}>
-        <Header />
-        <View
-          style={{
-            backgroundColor: isDarkMode ? Colors.black : Colors.white,
-          }}>
-          <Section title="Step One">
-            Edit <Text style={styles.highlight}>App.tsx</Text> to change this
-            screen and then come back to see your edits.
-          </Section>
-          <Section title="See Your Changes">
-            <ReloadInstructions />
-          </Section>
-          <Section title="Debug">
-            <DebugInstructions />
-          </Section>
-          <Section title="Learn More">
-            Read the docs to discover what to do next:
-          </Section>
-          <LearnMoreLinks />
+    <View>
+      <Text style={style.title}>Welcome to FILKOM UNKLAB</Text>
+      <ScrollView>
+        <TextInput 
+          style={style.inputUsername} 
+          placeholder='anything about FILKOM UNKLAB'
+          />
+        <View style={{flexDirection: 'row', marginTop: 20, justifyContent: 'center', alignItems: 'center'}}>
+          <View style={{width: 150, height: 100, backgroundColor: 'blue'}}/>
+          <View style={{ backgroundColor: 'yellow', width: 100, height: 100, justifyContent: 'center', alignItems: 'center' }}>
+            <Image source={Logo} style={{ width: 70, height: 70 }} />
+          </View>
+          <View style={{width: 150, height: 100, backgroundColor: 'blue'}}/>
+        </View>
+        <View>
+          <Text style={style.caption1}>Some documentation of Faculty of Computer Science
+          </Text>
+        </View>
+        <View style={style.center}>
+          <Image source={require('./assets/fiklogo.png')} style={{ width: 45, height: 45, borderColor: 'black' }} />
+          <Text style={style.caption2}>FILKOM di datangi oleh KBP.Dr Albert Sihombing, M.Si., M.A.
+          </Text>
+        </View>  
+        <View style={style.center}>
+          <Image source={require('./assets/cssa.jpeg')} style={{width: 360, height:160}}/>
+        </View>
+        <View style={style.center}>
+        <Image source={require('./assets/polisi.jpeg')} style={{width: 360, height:160}}/>
+        </View>
+        <View style={style.center}>
+          <Text style={style.caption2, {marginTop: 20, fontStyle: 'italic', color: 'black'}}>Voice Of Computer Science
+          </Text>
+        </View>
+        <View style={style.center}>
+          <Image source={require('./assets/vocs.jpeg')} style={{width: 300, height: 400}}/>
         </View>
       </ScrollView>
-    </SafeAreaView>
+    </View>
   );
-}
+};
 
-const styles = StyleSheet.create({
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
+const style = StyleSheet.create({
+  title: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    color: 'navy',
+    textAlign: 'center',
+    marginTop: 10,
+    marginBottom: 10,
+    backgroundColor: 'yellow'
   },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
+  inputUsername: {
+    borderColor: 'black',
+    borderWidth: 1,
+    margin: 10,
+    borderRadius: 10,
+    padding: 10,
   },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
+  caption1: {
+    fontSize: 15,
+    fontStyle: 'italic', 
+    fontWeight: 'bold',
+    color: 'navy',
+    textAlign: 'center',
+    margin: 10,
   },
-  highlight: {
-    fontWeight: '700',
+  caption2: {
+    fontSize: 12,
+    color: 'black',
+    textAlign: 'center',
+    margin: 10,
   },
+  center:{
+    flexDirection: 'row', 
+    justifyContent: 'center', 
+    alignItems: 'center' , 
+    marginBottom: 10
+  }
 });
 
 export default App;
