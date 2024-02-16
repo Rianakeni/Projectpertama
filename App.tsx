@@ -4,21 +4,25 @@ import {
   View, 
   ScrollView, 
   TextInput, 
-  StyleSheet
+  StyleSheet,
+  TouchableOpacity
 } from 'react-native'
 import React from 'react';
 import Logo from './assets/unklablogo.png';
 import Title from './src/components/Title';
 import Input from './src/components/Input';
+import Button from './src/components/Button';
 
 const App = () => {
   return (
     <View>
       <Title text='Welcome To FILKOM UNKLAB'/>
       <ScrollView>
-        <Input/>
-        <Input placeholder='masukan passoword'/>
-        <Input placeholder='masukan email'/>
+        <Text style={style.diatasInput}>Username</Text>
+        <Input placeholder='enter your username'/>
+        <Text style={style.diatasInput}>Password</Text>
+        <Input placeholder='enter your password'/>
+        <Button></Button>
         <View style={{flexDirection: 'row', marginTop: 20, justifyContent: 'center', alignItems: 'center'}}>
           <View style={{width: 150, height: 100, backgroundColor: 'blue'}}/>
           <View style={{ backgroundColor: 'yellow', width: 100, height: 100, justifyContent: 'center', alignItems: 'center' }}>
@@ -69,6 +73,13 @@ const style = StyleSheet.create({
     margin: 10,
     borderRadius: 10,
     padding: 10,
+  },
+  diatasInput: {
+    color: 'black',
+    fontWeight: 'bold',
+    textAlign: 'left',
+    marginLeft: 10,
+    fontSize: 16
   },
   caption1: {
     fontSize: 15,
